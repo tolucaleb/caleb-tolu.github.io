@@ -723,7 +723,7 @@
     width: auto;
   }
 }.u-section-7 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/w4-min.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://ik.imagekit.io/calebtolu/homepage/w4-min_gtZigjiz-3.jpg");
   background-position: 50% 50%;
 }
 
@@ -743,7 +743,7 @@
   min-height: 16px;
   width: 328px;
   min-width: 232px;
-  margin: 31px auto 60px;
+  margin: 40px auto 60px;
 }
 
 .u-section-7 .u-icon-1 {

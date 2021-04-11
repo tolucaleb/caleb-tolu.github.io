@@ -4,7 +4,7 @@
  * Copyright 2014-2020 Froala Labs
  */
 
-.fr-clearfix::after {
+ .fr-clearfix::after {
   clear: both;
   display: block;
   content: "";
@@ -17957,7 +17957,7 @@ a.pswp__share--download:hover {
 .u-back-image {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 .u-show-text-none .u-over-slide {

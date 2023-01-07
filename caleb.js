@@ -1,3 +1,9 @@
+function checkForThis(errProperty) {
+    if (!this.dom) {
+        throw new Error(this.error[errProperty]);
+    }
+}
+
 const $caleb = {
     dom: null,
     quotes: [],
@@ -17,45 +23,33 @@ const $caleb = {
     },
     querySelector: function (selector) {
         this.dom = document.querySelector(selector);
-        if (!this.dom) {
-            throw new Error(this.error.dom);
-        }
+        checkForThis.call(this, 'dom');
         return this;
     },
     text: function (text) {
-        if (!this.dom) {
-            throw this.error.queryMissing;
-        }
+        checkForThis.call(this, 'queryMissing')
         this.dom.innerText = text;
         return this;
     },
     style: function (style) {
-        if (!this.dom) {
-            throw this.error.queryMissing;
-        }
+        checkForThis.call(this, 'queryMissing')
         this.dom.style = style;
         return this;
     },
     setQuotes: function () {
         const quote = this.quotes[Math.floor(Math.random() * this.quotesLen)];
-        if (!this.dom) {
-            throw this.error.queryMissing;
-        }
+        checkForThis.call(this, 'queryMissing')
         this.text(quote).fadeIn(1);
         return this;
     },
     fadeIn: function (time) {
-        if (!this.dom) {
-            throw this.error.queryMissing;
-        }
+        checkForThis.call(this, 'queryMissing')
         this.dom.style.transition = `opacity ${time}s`;
         this.dom.style.opacity = 1;
         return this;
     },
     changeQuote: function (time) {
-        if (!this.dom) {
-            throw this.error.queryMissing;
-        }
+        checkForThis.call(this, 'queryMissing')
         if (this.timer) clearTimeout(this.timer);
         this.timer = setTimeout(() => {
             this.setQuotes();
